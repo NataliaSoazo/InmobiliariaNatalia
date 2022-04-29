@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navInicio">
+
+    <fragment
+        android:id="@+id/navInicio"
+        android:name="com.example.inmobiliarianatalia.ui.inicio.InicioFragment"
+        android:label="@string/Inicio"
+        tools:layout="@layout/fragment_inicio" />
+
+    <fragment
+        android:id="@+id/navPeril"
+        android:name="com.example.inmobiliarianatalia.ui.perfil.PerfilFragment"
+        android:label="@string/Perfil"
+        tools:layout="@layout/fragment_perfil" />
+
+    <fragment
+        android:id="@+id/navInmuebles"
+        android:name="com.example.inmobiliarianatalia.ui.inmuebles.InmueblesFragment"
+        android:label="@string/Inmuebles"
+        tools:layout="@layout/fragment_inmuebles" >
+        <action
+            android:id="@+id/action_navInmuebles_to_fragmentUnInmueble"
+            app:destination="@id/fragmentUnInmueble" />
+    </fragment>
+    <fragment
+        android:id="@+id/navInquilinos"
+        android:name="com.example.inmobiliarianatalia.ui.inquilinos.InquilinosFragment"
+        android:label="Inquilinos"
+        tools:layout="@layout/fragment_inquilinos" />
+    <fragment
+        android:id="@+id/navContratos"
+        android:name="com.example.inmobiliarianatalia.ui.contratos.ContratoFragment"
+        android:label="Contratos"
+        tools:layout="@layout/fragment_contratos" />
+    <fragment
+        android:id="@+id/navLogout"
+        android:name="com.example.inmobiliarianatalia.ui.logout.LogoutFragment"
+        android:label="Logout"
+        tools:layout="@layout/fragment_logout" />
+    <fragment
+        android:id="@+id/fragmentUnInmueble"
+        android:name="com.example.inmobiliarianatalia.ui.inmuebles.FragmentUnInmueble"
+        android:label="fragment_un_inmueble_fragment"
+        tools:layout="@layout/fragment_un_inmueble_fragment" >
+        <action
+            android:id="@+id/action_fragmentUnInmueble_to_navInmuebles"
+            app:destination="@id/navInmuebles" />
+    </fragment>
+</navigation>
